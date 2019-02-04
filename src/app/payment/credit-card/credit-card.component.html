@@ -1,0 +1,17 @@
+<mat-card class="creditCard">
+  <mat-card-title>Credit Card</mat-card-title>
+  <mat-card-content fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="Number" [(ngModel)]="paymentService.creditCard.number" (change)="setLocalStorage()" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="ExpDate" [(ngModel)]="paymentService.creditCard.expdate" (change)="setLocalStorage()" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Cvv" [(ngModel)]="paymentService.creditCard.cvv" (change)="setLocalStorage()" [disabled]="disableInputs">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+      <button *ngIf="populateButton" mat-raised-button color="accent" (click)="populate()">Populate</button>
+  </mat-card-actions>
+</mat-card>

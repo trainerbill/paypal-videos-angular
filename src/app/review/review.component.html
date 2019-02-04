@@ -1,0 +1,7 @@
+<div fxLayout="column">
+  <h1>Review your order</h1>
+  <app-shipping-address [disableInputs]="true" [populateButton]="false"></app-shipping-address>
+  <app-shipping-options [disableInputs]="true" ></app-shipping-options>
+  <app-payment-selection [disableInputs]="true" [populateButton]="false"></app-payment-selection>
+  <button class="review" fxFlex mat-raised-button color="accent" routerLink="/complete">Place Order</button>
+</div>

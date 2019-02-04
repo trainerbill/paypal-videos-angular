@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" >
+    <div fxLayout="column">
+      <app-item number="0"></app-item>
+      <app-item number="1"></app-item>
+    </div>
+    <div fxLayout="column">
+      <mat-card class="checkout">
+          <mat-card-title>Checkout</mat-card-title>
+          <mat-card-content>
+              <mat-list>
+                <mat-list-item>Total: $50.00</mat-list-item>
+              </mat-list>
+          </mat-card-content>
+          <mat-card-actions fxLayout="column">
+              <a style="margin-bottom: 10px" fxFlex mat-raised-button color="accent" routerLink="/shipping">Checkout</a>
+              <div fxFlex id="paypalIntegration"></div>
+          </mat-card-actions>
+      </mat-card>
+    </div>
+</div>
+

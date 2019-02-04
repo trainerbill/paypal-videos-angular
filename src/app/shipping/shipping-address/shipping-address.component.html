@@ -1,0 +1,26 @@
+<mat-card class="shippingAddress">
+  <mat-card-title>Shipping Address</mat-card-title>
+  <mat-card-content fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="shippingService.shippingAddress.name" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Street" [(ngModel)]="shippingService.shippingAddress.street" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="City" [(ngModel)]="shippingService.shippingAddress.city" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="State" [(ngModel)]="shippingService.shippingAddress.state" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Zip" [(ngModel)]="shippingService.shippingAddress.zip" [disabled]="disableInputs">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Country" [(ngModel)]="shippingService.shippingAddress.country" [disabled]="disableInputs">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="populateButton" mat-raised-button color="accent" (click)="populate()">Populate</button>
+  </mat-card-actions>
+</mat-card>
