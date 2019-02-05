@@ -21,6 +21,6 @@
     </mat-form-field>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="populateButton" mat-raised-button color="accent" (click)="populate()">Populate</button>
+    <button *ngIf="populateButton" mat-raised-button color="accent" (click)="populate()" disabled="disablePopulate">Populate</button>
   </mat-card-actions>
 </mat-card>

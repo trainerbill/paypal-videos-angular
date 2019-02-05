@@ -5,9 +5,9 @@
       <mat-radio-group [(ngModel)]="paymentService.paymentMethod" fxLayout="column" fxFlex="20" [disabled]="disableInputs">
         <mat-radio-button *ngFor="let method of paymentMethods" [value]="method">{{method}}</mat-radio-button>
       </mat-radio-group>
-      <div *ngIf="paymentService.paymentMethod && paymentService.paymentMethod === 'Credit Card'" fxLayout="column"
-        fxFlex>
-        <app-credit-card [populateButton]="populateButton" [disableInputs]="disableInputs"></app-credit-card>
+      <div fxFlex>
+        <app-credit-card *ngIf="paymentService.paymentMethod && paymentService.paymentMethod === 'CreditCard'" [populateButton]="populateButton" [disableInputs]="disableInputs"></app-credit-card>
+        <app-paypal *ngIf="paymentService.paymentMethod && paymentService.paymentMethod === 'PayPal'"></app-paypal>
       </div>
     </div>
   </mat-card-content>

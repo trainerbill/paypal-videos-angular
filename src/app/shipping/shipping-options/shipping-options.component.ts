@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShippingService } from '../shipping.service';
+import { ShippingOptions } from './shipping-options.constants';
 
 @Component({
   selector: 'app-shipping-options',
@@ -9,6 +10,8 @@ import { ShippingService } from '../shipping.service';
 export class ShippingOptionsComponent implements OnInit {
 
   @Input() disableInputs: boolean;
+
+  private shippingOptions = Object.values(ShippingOptions);
 
   constructor(
     private readonly shippingService: ShippingService

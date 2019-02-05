@@ -1,0 +1,41 @@
+<mat-card class="margin10">
+  <mat-card-title>PayPal</mat-card-title>
+  <mat-card-content fxLayout="column">
+    <mat-list>
+      <mat-list-item *ngIf="paypalOrder">Email: {{this.paypalOrder.payer.email_address}}</mat-list-item>
+      <mat-list-item>
+        <div fxFlex id="paypalIntegration" fxHide="paypalOrder">
+            <div id="paypal-button"></div>
+            <script type="text/javascript" src="https://www.paypal.com/sdk/js?client-id=${this.paypal.client}&intent=authorize&commit=false" ></script>
+            <script type="text/javascript">
+              function paypalLoaded() {
+                paypal.Buttons({
+                  style: {
+                      layout:  'horizontal',
+                  },
+                  createOrder: function(data, actions) {
+                      // Set up the transaction
+                      return actions.order.create({
+                          purchase_units: [{
+                              amount: {
+                                  value: '0.01'
+                              }
+                          }]
+                      });
+                  },
+                  onApprove: function(data, actions) {
+                      return actions.redirect('/shipping?' + Object.keys(data).map(key => key + '=' + data[key]).join('&'));
+                  },
+                  onError: function (err) {
+                      console.log(err);
+                  },
+              })
+              .render('#paypal-button');
+            }
+          </script>
+        </div>
+    </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+</mat-card>

@@ -13,6 +13,7 @@ import { PaymentModule } from './payment/payment.module';
 import { FormsModule } from '@angular/forms';
 import { ReviewModule } from './review/review.module';
 import { CompleteModule } from './complete/complete.module';
+import { PaypalServerModule } from './paypal-server/paypal-server.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CompleteModule } from './complete/complete.module';
     ShippingModule,
     PaymentModule,
     ReviewModule,
-    CompleteModule
+    CompleteModule,
+    PaypalServerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

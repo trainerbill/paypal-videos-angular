@@ -8,6 +8,7 @@ import { ShippingAddressComponent } from './shipping-address/shipping-address.co
 import { ShippingPageComponent } from './shipping-page/shipping-page.component';
 import { ShippingOptionsComponent } from './shipping-options/shipping-options.component';
 import { ShippingService } from './shipping.service';
+import { PaymentModule } from '../payment/payment.module';
 
 @NgModule({
   declarations: [ShippingAddressComponent, ShippingPageComponent, ShippingOptionsComponent],
@@ -20,7 +21,8 @@ import { ShippingService } from './shipping.service';
     FlexLayoutModule,
     MatRadioModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    PaymentModule,
   ],
   exports: [ShippingAddressComponent, ShippingOptionsComponent],
   providers: [ShippingService]

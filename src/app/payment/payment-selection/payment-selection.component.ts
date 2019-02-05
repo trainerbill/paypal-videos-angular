@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PaymentService } from '../payment.service';
+import { PaymentMethods } from '../payment.constants';
 
 @Component({
   selector: 'app-payment-selection',
@@ -8,7 +9,7 @@ import { PaymentService } from '../payment.service';
 })
 export class PaymentSelectionComponent implements OnInit {
 
-  public paymentMethods = ['Credit Card', 'Other'];
+  public paymentMethods = Object.values(PaymentMethods);
   public paymentMethod: string;
 
   @Input() disableInputs: boolean;
@@ -19,6 +20,9 @@ export class PaymentSelectionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.paymentService.paymentMethod) {
+      this.disableInputs = true;
+    }
   }
 
 }

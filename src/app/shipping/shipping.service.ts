@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ShippingAddress } from './shipping-address/shipping.address.class';
+import { ShippingOptions } from './shipping-options/shipping-options.constants';
 
 
 @Injectable()
 export class ShippingService {
 
   private _shippingAddress: ShippingAddress = new ShippingAddress();
-  private _shippingOption: string;
+  private _shippingOption: ShippingOptions;
 
   constructor() { }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import $ from 'jquery';
+import { PaypalServerService } from '../paypal-server/paypal-server.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,15 +11,13 @@ import $ from 'jquery';
 export class CartComponent implements OnInit {
 
   constructor(
-
-  ) {
-
-  }
+    private paypal: PaypalServerService,
+  ) {}
 
   ngOnInit() {
     $('#paypalIntegration').append(`<div id="paypal-button"></div>`);
     // tslint:disable-next-line:max-line-length
-    const PAYPAL_SCRIPT = 'https://www.paypal.com/sdk/js?client-id=ARkR7soWd2kUxFCNPHOmyb3IQhOwiL-wYhRmsRRD1SdslE0u-lCEps4LdN_KocpyEPgaWJXcsFuwd99M&intent=authorize&commit=false';
+    const PAYPAL_SCRIPT = `https://www.paypal.com/sdk/js?client-id=${this.paypal.client}&intent=authorize&commit=false`;
     const container = document.head || document.body;
     const script = document.createElement('script');
     script.setAttribute('src', PAYPAL_SCRIPT);
@@ -40,9 +39,7 @@ export class CartComponent implements OnInit {
                 });
             },
             onApprove: function(data, actions) {
-                return actions.order.authorize().then(() => {
-                    return actions.redirect('/shipping?' + Object.keys(data).map(key => key + '=' + data[key]).join('&'));
-                });
+                return actions.redirect('/shipping?' + Object.keys(data).map(key => key + '=' + data[key]).join('&'));
             },
             onError: function (err) {
                 console.log(err);

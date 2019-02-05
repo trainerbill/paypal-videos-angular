@@ -2,8 +2,7 @@
   <mat-card-title>Shipping Options</mat-card-title>
   <mat-card-content>
     <mat-radio-group [(ngModel)]="shippingService.shippingOption" fxLayout="column" fxLayoutAlign="space-between start" [disabled]="disableInputs">
-      <mat-radio-button value="7">Free 7 days</mat-radio-button>
-      <mat-radio-button value="overnight">Overnight</mat-radio-button>
+      <mat-radio-button *ngFor="let option of shippingOptions" [value]="option">{{option}}</mat-radio-button>
     </mat-radio-group>
   </mat-card-content>
 </mat-card>
