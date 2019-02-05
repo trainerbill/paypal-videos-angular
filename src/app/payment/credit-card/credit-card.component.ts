@@ -12,7 +12,7 @@ export class CreditCardComponent implements OnInit {
   @Input() disableInputs: boolean;
 
   constructor(
-    private readonly paymentService: PaymentService,
+    public readonly paymentService: PaymentService,
   ) { }
 
   ngOnInit() {

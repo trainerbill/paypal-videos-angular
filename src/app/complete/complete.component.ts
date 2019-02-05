@@ -15,8 +15,8 @@ export class CompleteComponent implements OnInit {
   };
 
   constructor(
-    private readonly paymentService: PaymentService,
-    private readonly paypal: PaypalServerService,
+    public readonly paymentService: PaymentService,
+    public readonly paypal: PaypalServerService,
   ) { }
 
   ngOnInit() {

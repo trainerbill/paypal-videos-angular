@@ -17,10 +17,10 @@ export class ReviewComponent implements OnInit {
 
 
   constructor(
-    private readonly route: ActivatedRoute,
-    private readonly paymentService: PaymentService,
-    private readonly paypal: PaypalServerService,
-    private readonly shippingService: ShippingService,
+    public readonly route: ActivatedRoute,
+    public readonly paymentService: PaymentService,
+    public readonly paypal: PaypalServerService,
+    public readonly shippingService: ShippingService,
   ) { }
 
   ngOnInit() {

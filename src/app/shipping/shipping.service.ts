@@ -6,8 +6,8 @@ import { ShippingOptions } from './shipping-options/shipping-options.constants';
 @Injectable()
 export class ShippingService {
 
-  private _shippingAddress: ShippingAddress = new ShippingAddress();
-  private _shippingOption: ShippingOptions;
+  public _shippingAddress: ShippingAddress = new ShippingAddress();
+  public _shippingOption: ShippingOptions;
 
   constructor() { }
 

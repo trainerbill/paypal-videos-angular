@@ -14,9 +14,9 @@ import { PaypalServerService } from 'src/app/paypal-server/paypal-server.service
 export class ShippingPageComponent implements OnInit {
 
   constructor(
-    private readonly route: ActivatedRoute,
-    private readonly paymentService: PaymentService,
-    private readonly paypal: PaypalServerService,
+    public readonly route: ActivatedRoute,
+    public readonly paymentService: PaymentService,
+    public readonly paypal: PaypalServerService,
   ) { }
 
   ngOnInit() {

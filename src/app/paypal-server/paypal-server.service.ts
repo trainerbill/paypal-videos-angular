@@ -16,15 +16,15 @@ export interface IAccessToken {
 @Injectable()
 export class PaypalServerService implements OnInit {
 
-  private endpoint = 'https://api.sandbox.paypal.com';
+  public endpoint = 'https://api.sandbox.paypal.com';
   // Before someone yells at me, this is SANDBOX CREDENTIALS and this will NEVER EVER be production.
   public client = 'ARkR7soWd2kUxFCNPHOmyb3IQhOwiL-wYhRmsRRD1SdslE0u-lCEps4LdN_KocpyEPgaWJXcsFuwd99M';
-  private secret = 'ECSQrtNCk09UyKoHfSWuogfaQRmjbgVy9Mg7nc6JOI48z_dMfNonz-3Z3KFCLeX5qhFLGJ9e--DY59gV';
-  private _accessToken: IAccessToken;
+  public secret = 'ECSQrtNCk09UyKoHfSWuogfaQRmjbgVy9Mg7nc6JOI48z_dMfNonz-3Z3KFCLeX5qhFLGJ9e--DY59gV';
+  public _accessToken: IAccessToken;
   public accessToken: Subject<IAccessToken>;
 
   constructor(
-    private http: HttpClient
+    public http: HttpClient
   ) {
 
   }

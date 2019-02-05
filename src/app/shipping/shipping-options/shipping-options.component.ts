@@ -11,10 +11,10 @@ export class ShippingOptionsComponent implements OnInit {
 
   @Input() disableInputs: boolean;
 
-  private shippingOptions = Object.values(ShippingOptions);
+  public shippingOptions = Object.values(ShippingOptions);
 
   constructor(
-    private readonly shippingService: ShippingService
+    public readonly shippingService: ShippingService
   ) { }
 
   ngOnInit() {

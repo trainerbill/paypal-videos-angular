@@ -21,10 +21,10 @@ export class ShippingAddressComponent implements OnInit {
   disablePopulate = false;
 
   constructor(
-    private readonly shippingService: ShippingService,
-    private readonly paypal: PaypalServerService,
-    private readonly route: ActivatedRoute,
-    private readonly paymentService: PaymentService,
+    public readonly shippingService: ShippingService,
+    public readonly paypal: PaypalServerService,
+    public readonly route: ActivatedRoute,
+    public readonly paymentService: PaymentService,
   ) { }
 
   async ngOnInit() {

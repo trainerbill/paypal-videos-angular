@@ -16,7 +16,7 @@ export class PaymentSelectionComponent implements OnInit {
   @Input() populateButton: boolean;
 
   constructor(
-    private readonly paymentService: PaymentService
+    public readonly paymentService: PaymentService
   ) { }
 
   ngOnInit() {

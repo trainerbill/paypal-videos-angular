@@ -11,7 +11,7 @@ import { PaypalServerService } from '../paypal-server/paypal-server.service';
 export class CartComponent implements OnInit {
 
   constructor(
-    private paypal: PaypalServerService,
+    public paypal: PaypalServerService,
   ) {}
 
   ngOnInit() {
